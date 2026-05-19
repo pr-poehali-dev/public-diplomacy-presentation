@@ -226,53 +226,55 @@ function Slide4() {
   );
 }
 
-/* ── СЛАЙД 5: Выводы ── */
+/* ── СЛАЙД 5: Спасибо ── */
 function Slide5() {
   return (
-    <div className="flex-1 flex flex-col px-16 py-10">
-      <SlideHeader number="04" title="Выводы и практическая значимость" />
-      <div className="flex-1 grid grid-cols-2 gap-10 mt-8">
-        <div>
-          <div className="animate-slide-up" style={{ animationDelay: "0.1s", opacity: 0 }}>
-            <BlockLabel>Основные выводы</BlockLabel>
-            <ul className="mt-3 space-y-4">
-              <Li>Корея сформировала последовательную систему ПД: законодательство → пятилетние планы → чёткое распределение ролей МИД / Корейский фонд / KOICA</Li>
-              <Li>Центральная Азия — перспективное направление долгосрочного сотрудничества</Li>
-              <Li>Саммит «Корея – ЦА» запланирован на сентябрь 2026 года</Li>
-            </ul>
-          </div>
-        </div>
-
-        <div className="space-y-5">
-          <div className="animate-slide-up" style={{ animationDelay: "0.2s", opacity: 0 }}>
-            <BlockLabel accent>Реализация в ЦА</BlockLabel>
-            <ul className="mt-3 space-y-3">
-              <LiSmall>Форум «Корея – Центральная Азия» — политический диалог</LiSmall>
-              <LiSmall>Институты Седжонга + рост студентов из региона</LiSmall>
-              <LiSmall>Технологические инициативы KOICA</LiSmall>
-              <LiSmall>Культурные и гуманитарные мероприятия</LiSmall>
-            </ul>
-          </div>
-
-          <div
-            className="mt-4 p-5 border border-[#C60C30]/30 rounded-sm bg-[#C60C30]/5 animate-slide-up"
-            style={{ animationDelay: "0.35s", opacity: 0 }}
-          >
-            <p className="font-sans text-xs text-[#1a1a1a]/40 uppercase tracking-widest mb-2">Практическая значимость</p>
-            <p className="font-sans text-base text-[#1a1a1a]/70 leading-relaxed">
-              Корейский опыт организации ПД может быть изучен и адаптирован российскими специалистами — с учётом значимости ЦА для обеих стран.
-            </p>
-          </div>
+    <div className="flex-1 flex flex-col items-center justify-center px-16 py-12 text-center relative overflow-hidden">
+      {/* Фоновый орнамент */}
+      <div className="absolute inset-0 pointer-events-none">
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full border border-black/[0.04]" />
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[400px] h-[400px] rounded-full border border-black/[0.04]" />
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[200px] h-[200px] rounded-full border border-[#C60C30]/10" />
+        <div className="absolute bottom-4 right-12 text-[180px] font-display text-black/[0.03] leading-none select-none">
+          감사
         </div>
       </div>
 
-      <div
-        className="mt-6 pt-5 border-t border-black/10 text-center animate-fade-in"
-        style={{ animationDelay: "0.5s", opacity: 0 }}
-      >
-        <p className="font-display text-2xl italic text-[#1a1a1a]/35">
-          Доклад окончен. Спасибо за внимание.
+      <div className="relative z-10 animate-fade-in" style={{ animationDelay: "0s" }}>
+        <p className="font-sans text-xs tracking-[0.4em] uppercase text-[#1a1a1a]/35 mb-10">
+          Выпускная квалификационная работа · 2025
         </p>
+
+        <h1 className="font-display text-6xl md:text-7xl lg:text-8xl font-semibold text-[#1a1a1a] leading-none mb-6">
+          Спасибо
+        </h1>
+        <h2 className="font-display text-4xl md:text-5xl font-semibold text-[#1a1a1a] leading-none mb-10">
+          за внимание
+        </h2>
+
+        <div className="w-16 h-px bg-[#C60C30] mx-auto mb-10 animate-line-grow" />
+
+        <p className="font-display text-xl italic text-[#1a1a1a]/45 mb-14">
+          Готова ответить на ваши вопросы
+        </p>
+      </div>
+
+      <div
+        className="relative z-10 grid grid-cols-3 gap-8 w-full max-w-2xl animate-slide-up"
+        style={{ animationDelay: "0.4s", opacity: 0 }}
+      >
+        <div className="text-center">
+          <p className="font-sans text-xs tracking-widest uppercase text-[#1a1a1a]/30 mb-1">Тема</p>
+          <p className="font-sans text-sm text-[#1a1a1a]/60 leading-snug">Публичная дипломатия Кореи в ЦА</p>
+        </div>
+        <div className="text-center border-x border-black/10">
+          <p className="font-sans text-xs tracking-widest uppercase text-[#1a1a1a]/30 mb-1">Период</p>
+          <p className="font-sans text-sm text-[#1a1a1a]/60 leading-snug">Базовый план 2022–2027</p>
+        </div>
+        <div className="text-center">
+          <p className="font-sans text-xs tracking-widest uppercase text-[#1a1a1a]/30 mb-1">Студент</p>
+          <p className="font-sans text-sm text-[#1a1a1a]/60 leading-snug">[Имя Фамилия]</p>
+        </div>
       </div>
     </div>
   );
