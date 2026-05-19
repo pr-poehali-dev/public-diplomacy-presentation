@@ -1,13 +1,7 @@
 import { useState, useEffect } from "react";
 import Icon from "@/components/ui/icon";
 
-const slides = [
-  { id: 1 },
-  { id: 2 },
-  { id: 3 },
-  { id: 4 },
-  { id: 5 },
-];
+const slides = [{ id: 1 }, { id: 2 }, { id: 3 }, { id: 4 }, { id: 5 }];
 
 export default function Index() {
   const [current, setCurrent] = useState(0);
@@ -37,15 +31,13 @@ export default function Index() {
   }, [current, animating]);
 
   return (
-    <div className="min-h-screen bg-[#0f1419] text-white flex flex-col select-none overflow-hidden">
-      {/* Декоративная полоса — цвета флага Кореи */}
+    <div className="min-h-screen bg-[#F7F5F0] text-[#1a1a1a] flex flex-col select-none overflow-hidden">
       <div className="h-1 w-full flex">
         <div className="flex-1 bg-[#C60C30]" />
-        <div className="flex-1 bg-white/20" />
+        <div className="flex-1 bg-[#1a1a1a]/15" />
         <div className="flex-1 bg-[#003478]" />
       </div>
 
-      {/* Основная область */}
       <div className="flex-1 flex flex-col relative">
         <div
           key={key}
@@ -59,12 +51,11 @@ export default function Index() {
         </div>
       </div>
 
-      {/* Нижняя навигация */}
-      <nav className="flex items-center justify-between px-10 py-5 border-t border-white/10">
+      <nav className="flex items-center justify-between px-10 py-5 border-t border-black/10">
         <button
           onClick={prev}
           disabled={current === 0}
-          className="flex items-center gap-2 text-white/50 hover:text-white disabled:opacity-20 transition-all duration-200 font-sans text-sm tracking-widest uppercase"
+          className="flex items-center gap-2 text-black/40 hover:text-black disabled:opacity-20 transition-all duration-200 font-sans text-sm tracking-widest uppercase"
         >
           <Icon name="ChevronLeft" size={18} />
           Назад
@@ -78,7 +69,7 @@ export default function Index() {
               className={`transition-all duration-300 rounded-full ${
                 i === current
                   ? "w-8 h-2 bg-[#C60C30]"
-                  : "w-2 h-2 bg-white/30 hover:bg-white/60"
+                  : "w-2 h-2 bg-black/20 hover:bg-black/40"
               }`}
             />
           ))}
@@ -87,7 +78,7 @@ export default function Index() {
         <button
           onClick={next}
           disabled={current === slides.length - 1}
-          className="flex items-center gap-2 text-white/50 hover:text-white disabled:opacity-20 transition-all duration-200 font-sans text-sm tracking-widest uppercase"
+          className="flex items-center gap-2 text-black/40 hover:text-black disabled:opacity-20 transition-all duration-200 font-sans text-sm tracking-widest uppercase"
         >
           Далее
           <Icon name="ChevronRight" size={18} />
@@ -102,10 +93,10 @@ function Slide1() {
   return (
     <div className="flex-1 flex flex-col items-center justify-center px-16 py-12 text-center relative overflow-hidden">
       <div className="absolute inset-0 pointer-events-none">
-        <div className="absolute top-8 right-12 w-64 h-64 rounded-full border border-white/5" />
-        <div className="absolute top-16 right-20 w-40 h-40 rounded-full border border-white/5" />
+        <div className="absolute top-8 right-12 w-64 h-64 rounded-full border border-black/5" />
+        <div className="absolute top-16 right-20 w-40 h-40 rounded-full border border-black/5" />
         <div className="absolute bottom-16 left-8 w-48 h-48 rounded-full border border-[#C60C30]/10" />
-        <div className="absolute -bottom-8 left-24 text-[200px] font-display text-white/[0.03] leading-none select-none">
+        <div className="absolute -bottom-8 left-24 text-[200px] font-display text-black/[0.04] leading-none select-none">
           한국
         </div>
       </div>
@@ -114,19 +105,19 @@ function Slide1() {
         <p className="font-sans text-sm tracking-[0.3em] uppercase text-[#C60C30] mb-6">
           Выпускная квалификационная работа
         </p>
-        <h1 className="font-display text-4xl md:text-5xl lg:text-6xl font-semibold leading-tight text-white max-w-4xl mb-8">
+        <h1 className="font-display text-4xl md:text-5xl lg:text-6xl font-semibold leading-tight text-[#1a1a1a] max-w-4xl mb-8">
           Реализация публичной дипломатии Республики Корея в странах Центральной Азии
         </h1>
         <div className="w-24 h-px bg-[#C60C30] mx-auto mb-8 animate-line-grow" />
-        <p className="font-display text-xl italic text-white/60 mb-10">
+        <p className="font-display text-xl italic text-[#1a1a1a]/55 mb-10">
           в рамках Базового плана публичной дипломатии 2022–2027
         </p>
       </div>
 
-      <div className="relative z-10 flex flex-col gap-1 text-white/40 font-sans text-sm animate-fade-in">
+      <div className="relative z-10 flex flex-col gap-1 text-[#1a1a1a]/45 font-sans text-sm animate-fade-in">
         <span>Студент: [Имя Фамилия]</span>
         <span>Научный руководитель: [ФИО]</span>
-        <span className="mt-2 text-white/25">[Университет] · [Год]</span>
+        <span className="mt-2 text-[#1a1a1a]/30">[Университет] · [Год]</span>
       </div>
     </div>
   );
@@ -167,13 +158,13 @@ function Slide3() {
       <div className="flex-1 grid grid-cols-3 gap-6 mt-8">
         <div className="animate-slide-up" style={{ animationDelay: "0.1s", opacity: 0 }}>
           <BlockLabel>Теория</BlockLabel>
-          <p className="mt-3 text-white/70 font-sans text-base leading-relaxed">
+          <p className="mt-3 text-[#1a1a1a]/65 font-sans text-base leading-relaxed">
             Классические подходы к публичной дипломатии. Средние державы используют «мягкую силу» как компенсацию ограниченных ресурсов «жёсткой силы».
           </p>
         </div>
         <div className="animate-slide-up" style={{ animationDelay: "0.2s", opacity: 0 }}>
           <BlockLabel accent>Цель</BlockLabel>
-          <p className="mt-3 text-white/70 font-sans text-base leading-relaxed">
+          <p className="mt-3 text-[#1a1a1a]/65 font-sans text-base leading-relaxed">
             Анализ нормативно-институциональных основ ПД Кореи на базе II Базового плана с учётом его досрочного завершения и сравнением с I планом.
           </p>
         </div>
@@ -264,11 +255,11 @@ function Slide5() {
           </div>
 
           <div
-            className="mt-4 p-5 border border-[#C60C30]/40 rounded-sm animate-slide-up"
+            className="mt-4 p-5 border border-[#C60C30]/30 rounded-sm bg-[#C60C30]/5 animate-slide-up"
             style={{ animationDelay: "0.35s", opacity: 0 }}
           >
-            <p className="font-sans text-xs text-white/40 uppercase tracking-widest mb-2">Практическая значимость</p>
-            <p className="font-sans text-base text-white/80 leading-relaxed">
+            <p className="font-sans text-xs text-[#1a1a1a]/40 uppercase tracking-widest mb-2">Практическая значимость</p>
+            <p className="font-sans text-base text-[#1a1a1a]/70 leading-relaxed">
               Корейский опыт организации ПД может быть изучен и адаптирован российскими специалистами — с учётом значимости ЦА для обеих стран.
             </p>
           </div>
@@ -276,10 +267,10 @@ function Slide5() {
       </div>
 
       <div
-        className="mt-6 pt-5 border-t border-white/10 text-center animate-fade-in"
+        className="mt-6 pt-5 border-t border-black/10 text-center animate-fade-in"
         style={{ animationDelay: "0.5s", opacity: 0 }}
       >
-        <p className="font-display text-2xl italic text-white/35">
+        <p className="font-display text-2xl italic text-[#1a1a1a]/35">
           Доклад окончен. Спасибо за внимание.
         </p>
       </div>
@@ -291,11 +282,11 @@ function Slide5() {
 
 function SlideHeader({ number, title }: { number: string; title: string }) {
   return (
-    <div className="flex items-start gap-6 pb-4 border-b border-white/10 animate-fade-in">
-      <span className="font-display text-6xl font-semibold text-white/[0.07] leading-none mt-1 shrink-0">
+    <div className="flex items-start gap-6 pb-4 border-b border-black/10 animate-fade-in">
+      <span className="font-display text-6xl font-semibold text-black/[0.06] leading-none mt-1 shrink-0">
         {number}
       </span>
-      <h2 className="font-display text-3xl md:text-4xl font-semibold text-white leading-tight pt-1">
+      <h2 className="font-display text-3xl md:text-4xl font-semibold text-[#1a1a1a] leading-tight pt-1">
         {title}
       </h2>
     </div>
@@ -306,7 +297,7 @@ function BlockLabel({ children, accent }: { children: React.ReactNode; accent?: 
   return (
     <div className="flex items-center gap-3">
       <span className={`w-3 h-3 rounded-sm shrink-0 ${accent ? "bg-[#C60C30]" : "bg-[#003478]"}`} />
-      <span className="font-sans text-xs tracking-[0.2em] uppercase text-white/50">
+      <span className="font-sans text-xs tracking-[0.2em] uppercase text-[#1a1a1a]/45">
         {children}
       </span>
     </div>
@@ -317,7 +308,7 @@ function Li({ children }: { children: React.ReactNode }) {
   return (
     <li className="flex items-start gap-3">
       <span className="mt-2 w-1.5 h-1.5 rounded-full bg-[#C60C30] shrink-0" />
-      <span className="font-sans text-base md:text-lg text-white/80 leading-snug">{children}</span>
+      <span className="font-sans text-base md:text-lg text-[#1a1a1a]/80 leading-snug">{children}</span>
     </li>
   );
 }
@@ -325,8 +316,8 @@ function Li({ children }: { children: React.ReactNode }) {
 function LiSmall({ children }: { children: React.ReactNode }) {
   return (
     <li className="flex items-start gap-3">
-      <span className="mt-2 w-1 h-1 rounded-full bg-white/30 shrink-0" />
-      <span className="font-sans text-sm md:text-base text-white/65 leading-snug">{children}</span>
+      <span className="mt-2 w-1 h-1 rounded-full bg-black/30 shrink-0" />
+      <span className="font-sans text-sm md:text-base text-[#1a1a1a]/60 leading-snug">{children}</span>
     </li>
   );
 }
@@ -345,23 +336,23 @@ function PlanCard({
     <div
       className={`flex flex-col p-5 rounded-sm border animate-slide-up ${
         highlight
-          ? "border-[#C60C30]/50 bg-[#C60C30]/5"
-          : "border-white/10 bg-white/[0.03]"
+          ? "border-[#C60C30]/40 bg-[#C60C30]/5"
+          : "border-black/10 bg-black/[0.02]"
       }`}
       style={{ animationDelay: delay, opacity: 0 }}
     >
-      <p className="font-sans text-xs tracking-widest uppercase text-white/35 mb-1">{period}</p>
-      <h3 className="font-display text-xl font-semibold text-white mb-4 leading-tight">{title}</h3>
+      <p className="font-sans text-xs tracking-widest uppercase text-[#1a1a1a]/35 mb-1">{period}</p>
+      <h3 className="font-display text-xl font-semibold text-[#1a1a1a] mb-4 leading-tight">{title}</h3>
       <ul className="flex-1 space-y-3">
         {items.map((item, i) => (
           <li key={i} className="flex items-start gap-2">
-            <span className={`mt-2 w-1.5 h-1.5 rounded-full shrink-0 ${highlight ? "bg-[#C60C30]" : "bg-white/25"}`} />
-            <span className="font-sans text-sm text-white/70 leading-snug">{item}</span>
+            <span className={`mt-2 w-1.5 h-1.5 rounded-full shrink-0 ${highlight ? "bg-[#C60C30]" : "bg-black/25"}`} />
+            <span className="font-sans text-sm text-[#1a1a1a]/65 leading-snug">{item}</span>
           </li>
         ))}
       </ul>
       {note && (
-        <p className="mt-4 pt-3 border-t border-[#C60C30]/30 font-sans text-xs text-[#C60C30]/80">
+        <p className="mt-4 pt-3 border-t border-[#C60C30]/30 font-sans text-xs text-[#C60C30]">
           ⚑ {note}
         </p>
       )}
